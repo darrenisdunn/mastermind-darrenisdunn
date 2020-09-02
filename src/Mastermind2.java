@@ -8,7 +8,7 @@ public class Mastermind2 {
     public static void main(String[] args) {
         StringBuilder secret = generateSecret();
 
-        System.out.println(secret);
+        System.out.println(secret); // for testing purposes
 
         // creating a new string originalSecret to keep the original secret
         StringBuilder originalSecret = new StringBuilder(4);
@@ -23,7 +23,6 @@ public class Mastermind2 {
 
         while (!finished) {
             StringBuilder copySecret = new StringBuilder(4);
-            System.out.println(secret); // for testing purposes
 
             for (int i = 0; i < 4; i++) {
                 copySecret.append(originalSecret.charAt(i));
