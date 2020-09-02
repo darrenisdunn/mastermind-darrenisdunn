@@ -19,7 +19,7 @@ public class Mastermind2 {
 
         // control
         boolean finished = false;
-        int numGueses = 0;
+        int numGuesses = 0;
 
         while (!finished) {
             StringBuilder copySecret = new StringBuilder(4);
@@ -39,11 +39,17 @@ public class Mastermind2 {
             int partials = computePartials(copySecret, cGuess);
             System.out.println("Number of partials: " + partials);
 
+            // iterate number of Guesses
+            numGuesses = numGuesses + 1;
+
             // check if user guessed correctly
             if (exacts == 4) {
                 finished = true;
                 System.out.println("Congratulations!");
             }
+
+            // print number of guesses
+            System.out.println("Number of guesses: " + numGuesses);
         }
     }
 
