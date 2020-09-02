@@ -61,7 +61,7 @@ public class Mastermind4 {
         }
     }
 
-    // static method for generating secret
+    // instance method for generating secret
     public StringBuilder generateSecret() {
         StringBuilder secret = new StringBuilder(4);
 
@@ -72,7 +72,7 @@ public class Mastermind4 {
         return secret;
     }
 
-    // static method for getting user's guess
+    // instance method for getting user's guess
     public String getGuess() {
         String guess = "";
         Scanner scanner = new Scanner(System.in);
@@ -82,7 +82,7 @@ public class Mastermind4 {
         return guess;
     }
 
-    // static method for computing exact matches
+    // instance method for computing exact matches
     public int computeExacts(StringBuilder guess) {
         int exacts = 0;
         for (int i = 0; i < 4; i++) {
@@ -95,7 +95,7 @@ public class Mastermind4 {
         return exacts;
     }
 
-    // static method for computing partial matches
+    // instance method for computing partial matches
     public int computePartials(StringBuilder guess) {
         int partials = 0;
         int t = 0;
