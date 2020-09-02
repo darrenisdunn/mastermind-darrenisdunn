@@ -1,3 +1,4 @@
+// Mastermind Version 1 Darren Dunn
 import java.util.Scanner;
 import java.util.Random;
 /**
