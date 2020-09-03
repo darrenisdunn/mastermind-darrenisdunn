@@ -18,7 +18,7 @@ public class Mastermind1 {
             secret.append(colors.charAt(index));
         }
 
-        System.out.println(secret);
+        System.out.println("Secret (for testing purposes): " + secret);
 
         //Creating a new string originalSecret to keep the original secret
         StringBuilder originalSecret = new StringBuilder(4);
@@ -33,6 +33,7 @@ public class Mastermind1 {
 
         // control
         boolean finished = false;
+        boolean validInput = false;
         int numGuesses = 0;
 
         while (finished == false) {
@@ -43,8 +44,8 @@ public class Mastermind1 {
 
             String guess = "";
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Guesses consist of 4 letters from:" + colors);
-            System.out.println("Please enter a 4 letter guess:");
+            System.out.println("Guesses consist of 4 letters from: " + colors);
+            System.out.println("Please enter a 4 letter guess: ");
             guess = scanner.nextLine();
 
             // convert guess string into StringBuilder

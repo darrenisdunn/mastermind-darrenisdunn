@@ -16,7 +16,7 @@ public class Mastermind4 {
 
         StringBuilder secret = mastermind.generateSecret();
 
-        System.out.println(secret);
+        System.out.println("Secret (for testing purposes): " + secret);
 
         // creating a new string originalSecret to keep the original secret
         StringBuilder originalSecret = new StringBuilder(4);
@@ -78,8 +78,8 @@ public class Mastermind4 {
         Scanner scanner = new Scanner(System.in);
 
         while (!validInput) {
-            System.out.println("Guesses consist of 4 letters from:" + colors);
-            System.out.println("Please enter a 4 letter guess:");
+            System.out.println("Guesses consist of 4 letters from: " + colors);
+            System.out.println("Please enter a 4 letter guess: ");
             guess = scanner.nextLine();
 
             // validate user input
@@ -88,6 +88,7 @@ public class Mastermind4 {
                     validInput = true;
                 } else {
                     validInput = false;
+                    break;
                 }
             }
             if (!validInput) {

@@ -74,8 +74,8 @@ public class Mastermind3 {
         Scanner scanner = new Scanner(System.in);
 
         while (!validInput) {
-            System.out.println("Guesses consist of 4 letters from:" + colors);
-            System.out.println("Please enter a 4 letter guess:");
+            System.out.println("Guesses consist of 4 letters from: " + colors);
+            System.out.println("Please enter a 4 letter guess: ");
             guess = scanner.nextLine();
 
             // validate user input
@@ -84,6 +84,7 @@ public class Mastermind3 {
                     validInput = true;
                 } else {
                     validInput = false;
+                    break;
                 }
             }
             if (!validInput) {
