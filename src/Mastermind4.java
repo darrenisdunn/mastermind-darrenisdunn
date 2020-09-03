@@ -31,7 +31,6 @@ public class Mastermind4 {
 
         while (!finished) {
             StringBuilder copySecret = new StringBuilder(4);
-            System.out.println(secret); // for testing purposes
 
             for (int i = 0; i < 4; i++) {
                 copySecret.append(originalSecret.charAt(i));
@@ -74,11 +73,27 @@ public class Mastermind4 {
 
     // instance method for getting user's guess
     public String getGuess() {
+        boolean validInput = false;
         String guess = "";
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Guesses consist of 4 letters from:" + colors);
-        System.out.println("Please enter a 4 letter guess:");
-        guess = scanner.nextLine();
+
+        while (!validInput) {
+            System.out.println("Guesses consist of 4 letters from:" + colors);
+            System.out.println("Please enter a 4 letter guess:");
+            guess = scanner.nextLine();
+
+            // validate user input
+            for (int i = 0; i < 4; i++) {
+                if (guess.charAt(i) == 'R' || guess.charAt(i) == 'G' || guess.charAt(i) == 'Y' || guess.charAt(i) == 'B' || guess.charAt(i) == 'O' || guess.charAt(i) == 'P') {
+                    validInput = true;
+                } else {
+                    validInput = false;
+                }
+            }
+            if (!validInput) {
+                System.out.println("Invalid input. Please use colors provided.");
+            }
+        }
         return guess;
     }
 
