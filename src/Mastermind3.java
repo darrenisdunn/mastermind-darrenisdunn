@@ -22,6 +22,7 @@ public class Mastermind3 {
 
         // control
         boolean finished = false;
+        int numGuesses = 0;
 
         while (!finished) {
             StringBuilder copySecret = new StringBuilder(4);
@@ -41,11 +42,17 @@ public class Mastermind3 {
             int partials = mastermind.computePartials(copySecret, cGuess);
             System.out.println("Number of partials: " + partials);
 
+            // iterate number of Guesses
+            numGuesses = numGuesses + 1;
+
             // check if user guessed correctly
             if (exacts == 4) {
                 finished = true;
                 System.out.println("Congratulations!");
             }
+
+            // print number of guesses
+            System.out.println("Number of guesses: " + numGuesses);
         }
     }
 
@@ -62,7 +69,6 @@ public class Mastermind3 {
 
     // instance method for getting user's guess
     public String getGuess() {
-        int numGuesses = 0;
         boolean validInput = false;
         String guess = "";
         Scanner scanner = new Scanner(System.in);
@@ -82,9 +88,6 @@ public class Mastermind3 {
             }
             if (!validInput) {
                 System.out.println("Invalid input. Please use colors provided.");
-            } else {
-                numGuesses++;
-                System.out.println("Number of guesses: " + numGuesses);
             }
         }
         return guess;
