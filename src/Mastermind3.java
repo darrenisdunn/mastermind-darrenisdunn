@@ -1,7 +1,9 @@
 // Mastermind Version 3 Darren Dunn
 
 import java.util.Scanner;
-
+/**
+ * Mastermind game with instance methods
+ */
 public class Mastermind3 {
     public static final String colors="RGYBOP";
 
@@ -20,7 +22,7 @@ public class Mastermind3 {
             originalSecret.append(secret.charAt(i));
         }
 
-        // control
+        // main code
         boolean finished = false;
         int numGuesses = 0;
 
@@ -42,7 +44,7 @@ public class Mastermind3 {
             int partials = mastermind.computePartials(copySecret, cGuess);
             System.out.println("Number of partials: " + partials);
 
-            // iterate number of Guesses
+            // iterate number of guesses
             numGuesses = numGuesses + 1;
 
             // check if user guessed correctly

@@ -47,6 +47,7 @@ public class Mastermind1 {
             System.out.println("Guesses consist of 4 letters from: " + colors);
             System.out.println("Please enter a 4 letter guess: ");
             guess = scanner.nextLine();
+            // unable to incorporate input validation due to instability in version 1. Please refer to my other versions.
 
             // convert guess string into StringBuilder
             StringBuilder cGuess = new StringBuilder(guess);
