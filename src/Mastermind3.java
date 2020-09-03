@@ -22,7 +22,6 @@ public class Mastermind3 {
 
         // control
         boolean finished = false;
-        int numGuesses = 0;
 
         while (!finished) {
             StringBuilder copySecret = new StringBuilder(4);
@@ -42,17 +41,11 @@ public class Mastermind3 {
             int partials = mastermind.computePartials(copySecret, cGuess);
             System.out.println("Number of partials: " + partials);
 
-            // iterate number of Guesses
-            numGuesses = numGuesses + 1;
-
             // check if user guessed correctly
             if (exacts == 4) {
                 finished = true;
                 System.out.println("Congratulations!");
             }
-
-            // print number of guesses
-            System.out.println("Number of guesses: " + numGuesses);
         }
     }
 
@@ -69,11 +62,31 @@ public class Mastermind3 {
 
     // instance method for getting user's guess
     public String getGuess() {
+        int numGuesses = 0;
+        boolean validInput = false;
         String guess = "";
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Guesses consist of 4 letters from:" + colors);
-        System.out.println("Please enter a 4 letter guess:");
-        guess = scanner.nextLine();
+
+        while (!validInput) {
+            System.out.println("Guesses consist of 4 letters from:" + colors);
+            System.out.println("Please enter a 4 letter guess:");
+            guess = scanner.nextLine();
+
+            // validate user input
+            for (int i = 0; i < 4; i++) {
+                if (guess.charAt(i) == 'R' || guess.charAt(i) == 'G' || guess.charAt(i) == 'Y' || guess.charAt(i) == 'B' || guess.charAt(i) == 'O' || guess.charAt(i) == 'P') {
+                    validInput = true;
+                } else {
+                    validInput = false;
+                }
+            }
+            if (!validInput) {
+                System.out.println("Invalid input. Please use colors provided.");
+            } else {
+                numGuesses++;
+                System.out.println("Number of guesses: " + numGuesses);
+            }
+        }
         return guess;
     }
 
