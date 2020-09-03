@@ -44,7 +44,7 @@ public class Mastermind3 {
             int partials = mastermind.computePartials(copySecret, cGuess);
             System.out.println("Number of partials: " + partials);
 
-            // iterate number of Guesses
+            // iterate number of guesses
             numGuesses = numGuesses + 1;
 
             // check if user guessed correctly
